@@ -1,1 +1,3 @@
 react slick 9-1 lien quan den carosel
+animation 9
+Full chuong 11 
