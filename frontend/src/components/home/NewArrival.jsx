@@ -81,6 +81,17 @@ const NewArrival = (props) => {
             </Card>
           </div>
 
+          <div>
+            <Card className="image-box card w-100">
+              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
+              <Card.Body>
+                <p className="product-name-on-card">Name of book</p>
+                <p className="product-price-on-card">Price : $120</p>
+
+              </Card.Body>
+            </Card>
+          </div>
+
         </Slider>
       </Container>
     </Fragment>

@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import Slider from 'react-slick'
-import "../../assets/css/home/featureProduct.scss"
+import "../../../assets/css/home/featureProduct.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function NewArrival() {
+const NewArrival = (props) => {
   var settings = {
     dots: false,
     infinite: true,
@@ -28,64 +28,70 @@ function NewArrival() {
         <Slider {...settings}>
           <div>
             <Card className="image-box card w-100">
-              <img className="center w-75" src="https://rukminim1.flixcart.com/image/800/960/kf1fo280hlty2aw-0/t-shirt/w/s/e/-original-imafdfvvr8hqdu65.jpeg?q=50" />
+              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
               <Card.Body>
-                <p className="product-name-on-card">Striped Men Hooded Neck Red</p>
+                <p className="product-name-on-card">Name of book</p>
                 <p className="product-price-on-card">Price : $120</p>
 
               </Card.Body>
             </Card>
           </div>
+
           <div>
             <Card className="image-box card w-100">
-              <img className="center w-75" src="https://rukminim1.flixcart.com/image/800/960/kf1fo280hlty2aw-0/t-shirt/w/s/e/-original-imafdfvvr8hqdu65.jpeg?q=50" />
+              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
               <Card.Body>
-                <p className="product-name-on-card">Striped Men Hooded Neck Red</p>
+                <p className="product-name-on-card">Name of book</p>
                 <p className="product-price-on-card">Price : $120</p>
 
               </Card.Body>
             </Card>
           </div>
+
           <div>
             <Card className="image-box card w-100">
-              <img className="center w-75" src="https://rukminim1.flixcart.com/image/800/960/kf1fo280hlty2aw-0/t-shirt/w/s/e/-original-imafdfvvr8hqdu65.jpeg?q=50" />
+              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
               <Card.Body>
-                <p className="product-name-on-card">Striped Men Hooded Neck Red</p>
+                <p className="product-name-on-card">Name of book</p>
                 <p className="product-price-on-card">Price : $120</p>
 
               </Card.Body>
             </Card>
           </div>
+
           <div>
             <Card className="image-box card w-100">
-              <img className="center w-75" src="https://rukminim1.flixcart.com/image/800/960/kf1fo280hlty2aw-0/t-shirt/w/s/e/-original-imafdfvvr8hqdu65.jpeg?q=50" />
+              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
               <Card.Body>
-                <p className="product-name-on-card">Striped Men Hooded Neck Red</p>
+                <p className="product-name-on-card">Name of book</p>
                 <p className="product-price-on-card">Price : $120</p>
 
               </Card.Body>
             </Card>
           </div>
+
           <div>
             <Card className="image-box card w-100">
-              <img className="center w-75" src="https://rukminim1.flixcart.com/image/800/960/kf1fo280hlty2aw-0/t-shirt/w/s/e/-original-imafdfvvr8hqdu65.jpeg?q=50" />
+              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
               <Card.Body>
-                <p className="product-name-on-card">Striped Men Hooded Neck Red</p>
+                <p className="product-name-on-card">Name of book</p>
                 <p className="product-price-on-card">Price : $120</p>
 
               </Card.Body>
             </Card>
           </div>
+
           <div>
             <Card className="image-box card w-100">
-              <img className="center w-75" src="https://rukminim1.flixcart.com/image/800/960/kf1fo280hlty2aw-0/t-shirt/w/s/e/-original-imafdfvvr8hqdu65.jpeg?q=50" />
+              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
               <Card.Body>
-                <p className="product-name-on-card">Striped Men Hooded Neck Red</p>
+                <p className="product-name-on-card">Name of book</p>
                 <p className="product-price-on-card">Price : $120</p>
 
               </Card.Body>
             </Card>
           </div>
+
         </Slider>
       </Container>
     </Fragment>

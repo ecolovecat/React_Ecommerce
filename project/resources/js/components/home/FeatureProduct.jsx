@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
-import {Container,Row,Col, Card} from 'react-bootstrap'
-import "../../assets/css/home/featureProduct.scss"
+import { Container, Row, Col, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import "../../../assets/css/home/featureProduct.scss"
 
-function FeatureProduct() {
+const FeatureProduct = (props) => {
   return (
     <Fragment>
       <div className="sb-feature-title">
@@ -16,92 +17,44 @@ function FeatureProduct() {
       <Container>
         <Row>
           <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Card className="image-box card">
-              <img className="center" src="https://rukminim1.flixcart.com/image/416/416/kn7sdjk0/mobile/q/j/x/c21-rmx3201-realme-original-imagfxfwbszrxkvu.jpeg?q=70" />   
-              <Card.Body> 
-                <p className="product-name-on-card">Realme C21 (Cross Black, 64 GB)</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
+            <Link to="/productdetails">
+              <Card className="image-box card sb-card">
+                <img className="center sb-card-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
+                <Card.Body>
+                  <p className="product-name-on-card">Name of book</p>
+                  <p className="product-price-on-card">Price : $120</p>
+                </Card.Body>
+              </Card>
+            </Link>
           </Col>
 
           <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Card className="image-box card">
-              <img className="center" src="https://rukminim1.flixcart.com/image/416/416/kn7sdjk0/mobile/q/j/x/c21-rmx3201-realme-original-imagfxfwbszrxkvu.jpeg?q=70" />   
-              <Card.Body> 
-                <p className="product-name-on-card">Realme C21 (Cross Black, 64 GB)</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
+            <Link to="/productdetails">
+              <Card className="image-box card sb-card">
+                <img className="center sb-card-img" src="https://pixlr.com/images/index/remove-bg.webp" />
+                <Card.Body>
+                  <p className="product-name-on-card">Name of book</p>
+                  <p className="product-price-on-card">Price : $120</p>
+                </Card.Body>
+              </Card>
+            </Link>
           </Col>
 
           <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Card className="image-box card">
-              <img className="center" src="https://rukminim1.flixcart.com/image/416/416/kn7sdjk0/mobile/q/j/x/c21-rmx3201-realme-original-imagfxfwbszrxkvu.jpeg?q=70" />   
-              <Card.Body> 
-                <p className="product-name-on-card">Realme C21 (Cross Black, 64 GB)</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
+            <Link to="/productdetails">
+              <Card className="image-box card sb-card">
+                <img className="center sb-card-img" src="https://vietjet.net/includes/uploads/2020/12/nuoc-anh-thuoc-chau-nao-600x388.jpg" />
+                <Card.Body>
+                  <p className="product-name-on-card">Name of book</p>
+                  <p className="product-price-on-card">Price : $120</p>
+                </Card.Body>
+              </Card>
+            </Link>
           </Col>
 
-          <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Card className="image-box card">
-              <img className="center" src="https://rukminim1.flixcart.com/image/416/416/kn7sdjk0/mobile/q/j/x/c21-rmx3201-realme-original-imagfxfwbszrxkvu.jpeg?q=70" />   
-              <Card.Body> 
-                <p className="product-name-on-card">Realme C21 (Cross Black, 64 GB)</p>
-                <p className="product-price-on-card">Price : $120</p>
+          
 
-              </Card.Body>
-            </Card>
-          </Col>
 
-          <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Card className="image-box card">
-              <img className="center" src="https://rukminim1.flixcart.com/image/416/416/kn7sdjk0/mobile/q/j/x/c21-rmx3201-realme-original-imagfxfwbszrxkvu.jpeg?q=70" />   
-              <Card.Body> 
-                <p className="product-name-on-card">Realme C21 (Cross Black, 64 GB)</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
-          </Col>
-
-          <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Card className="image-box card">
-              <img className="center" src="https://rukminim1.flixcart.com/image/416/416/kn7sdjk0/mobile/q/j/x/c21-rmx3201-realme-original-imagfxfwbszrxkvu.jpeg?q=70" />   
-              <Card.Body> 
-                <p className="product-name-on-card">Realme C21 (Cross Black, 64 GB)</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
-          </Col>
-
-          <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Card className="image-box card">
-              <img className="center" src="https://rukminim1.flixcart.com/image/416/416/kn7sdjk0/mobile/q/j/x/c21-rmx3201-realme-original-imagfxfwbszrxkvu.jpeg?q=70" />   
-              <Card.Body> 
-                <p className="product-name-on-card">Realme C21 (Cross Black, 64 GB)</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
-          </Col>
-
-          <Col className="p-1" key={1} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Card className="image-box card">
-              <img className="center" src="https://rukminim1.flixcart.com/image/416/416/kn7sdjk0/mobile/q/j/x/c21-rmx3201-realme-original-imagfxfwbszrxkvu.jpeg?q=70" />   
-              <Card.Body> 
-                <p className="product-name-on-card">Realme C21 (Cross Black, 64 GB)</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
-          </Col>
         </Row>
       </Container>
     </Fragment>
