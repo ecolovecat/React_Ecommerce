@@ -18,7 +18,7 @@ const Notification = () => {
       <Container className="TopSection">
         <Row>
           <Col className=" p-1 " md={6} lg={6} sm={12} xs={12}>
-            <Card onClick={this.handleShow} className="notification-card">
+            <Card onClick={handleShow} className="notification-card">
               <Card.Body>
                 <h6> Lorem Ipsum is simply dummy text of the printing</h6>
                 <p className="py-1  px-0 text-primary m-0"><i className="fa  fa-bell"></i>   Date: 22/12/2010 | Status: Unread</p>
@@ -27,7 +27,7 @@ const Notification = () => {
           </Col>
 
           <Col className=" p-1 " md={6} lg={6} sm={12} xs={12}>
-            <Card onClick={this.handleShow} className="notification-card">
+            <Card onClick={handleShow} className="notification-card">
               <Card.Body>
                 <h6> Lorem Ipsum is simply dummy text of the printing</h6>
                 <p className="py-1   px-0 text-primary m-0"><i className="fa  fa-bell"></i>   Date: 22/12/2010 | Status: Unread</p>
@@ -82,7 +82,7 @@ const Notification = () => {
       </Container>
 
 
-      <Modal show={this.state.show} onHide={this.handleClose}>
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <h6><i className="fa fa-bell"></i> Date:11/05/2021</h6>
         </Modal.Header>
@@ -96,7 +96,7 @@ const Notification = () => {
 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={this.handleClose}>
+          <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
 
