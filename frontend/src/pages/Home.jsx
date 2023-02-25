@@ -7,10 +7,17 @@ import NavMenuDesktop from '../components/layouts/NavMenuDesktop';
 import NavMenuMobile from '../components/layouts/NavMenuMobile';
 import FooterDesktop from '../components/layouts/FooterDesktop';
 import FooterMobile from '../components/layouts/FooterMobile';
+import axios from 'axios'
+import AppURL from '../api/AppURL.js'
 
 const Home = () => {
+  const GetVisitorDetails = () => {
+    axios.get(AppURL.VisitorDetails).then().catch()
+  }
+
   useEffect(() => {
     window.scroll(0, 0);
+    GetVisitorDetails()
   }, []);
 
   return (
