@@ -1,6 +1,8 @@
+const BaseURL = "http://127.0.0.1:8000/api"
+
 const AppURL = {
-  BaseURL: "http://127.0.0.1:8000/api",
-  VisitorDetails: "http://127.0.0.1:8000/api/getVisitor"
+  VisitorDetails: BaseURL + "/getVisitor",
+  PostContact: BaseURL + "/postContact"
 };
 
 export default AppURL;
