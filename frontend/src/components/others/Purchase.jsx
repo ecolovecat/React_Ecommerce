@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Purchase = (props) => {
-    const [purchase, SetPurchase] = useState('')
+    const [purchase, setPurchase] = useState('')
     const [loaderDiv, setLoaderDiv] = useState('');
     const [mainDiv, setMainDiv] = useState('d-none');
     useEffect(() => {
@@ -15,7 +15,7 @@ const Purchase = (props) => {
             let StatusCode = response.status;
             if (StatusCode == 200) {
                 let JsonData = (response.data)[0]['purchase_guide'];
-                SetPurchase(JsonData);
+                setPurchase(JsonData);
                 setLoaderDiv("d-none")
                 setMainDiv("")
             } else {
