@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\VisitorController;
-use App\Http\Controllers\ContactController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\VisitorController;
+use App\Http\Controllers\Admin\SiteInfoController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,12 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-
+// get visitor
 Route::get('/getVisitor', [VisitorController::class, 'getVisitorDetails']);
 
+//get page contact
 Route::post('/postContact', [ContactController::class, 'postContactDetails']);
+
+
+// site info route
+Route::get('/allSiteInfo', [SiteInfoController::class, 'allSiteInfo']);

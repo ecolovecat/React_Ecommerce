@@ -9,6 +9,7 @@ import ProductDetailsPage from '../pages/ProductDetailsPage';
 import NotificationPage from '../pages/NotificationPage';
 import FavouritePage from '../pages/FavouritePage';
 import CartPage from '../pages/CartPage';
+import AboutPage from '../pages/AboutPage';
 
 const AppRoute = (props) => {
      return (
@@ -20,6 +21,7 @@ const AppRoute = (props) => {
                     <Route exact path="/purchase" element={<PurchasePage />} />
                     <Route exact path="/privacy" element={<PrivacyPage />} />
                     <Route exact path="/refund" element={<RefundPage />} />
+                    <Route exact path="/about" element={<AboutPage />} />
 
                     <Route exact path="/productdetails" element={<ProductDetailsPage />} />
 
