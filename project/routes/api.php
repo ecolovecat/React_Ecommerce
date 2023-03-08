@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\SiteInfoController;
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -29,3 +30,6 @@ Route::post('/postContact', [ContactController::class, 'postContactDetails']);
 
 // site info route
 Route::get('/allSiteInfo', [SiteInfoController::class, 'allSiteInfo']);
+
+// All categories route
+Route::get('/allCategories', [CategoryController::class, 'allCategory']);
