@@ -5,6 +5,7 @@
 @import "footer.css";
 @import "productDetails.css";
 @import "cartList.css";
+@import "./home/homeSlider.css";
 
 body {
   background-color: rgb(223, 187, 187);
