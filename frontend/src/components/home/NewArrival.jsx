@@ -1,102 +1,103 @@
-import React, { Fragment } from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap'
-import Slider from 'react-slick'
-import "../../assets/css/home/featureProduct.scss"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useState, useEffect, useRef, Fragment } from 'react';
+import Slider from 'react-slick';
+import { Container, Row, Card } from 'react-bootstrap';
+import AppURL from '../../api/AppURL';
+import axios from 'axios';
 
-const NewArrival = (props) => {
-  var settings = {
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+const NewArrival = () => {
+  const [productData, setProductData] = useState([]);
+  const sliderRef = useRef(null);
+
+  const next = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const previous = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  useEffect(() => {
+    axios.get(AppURL.ProductListByRemark('NEW')).then((response) => {
+      setProductData(response.data);
+    }).catch((error) => {});
+  }, []);
+
+  const productList = productData.map((product, i) => {
+    if (product.special_price === 'na') {
+      return (
+          <div key={i}>
+            <Card className="image-box card">
+              <img className="center" src={product.image} alt={product.title} />
+              <Card.Body>
+                <p className="product-name-on-card">{product.title}</p>
+                <p className="product-price-on-card">Price : ${product.price}</p>
+              </Card.Body>
+            </Card>
+          </div>
+      );
+    } else {
+      return (
+          <div key={i}>
+            <Card className="image-box card">
+              <img className="center" src={product.image} alt={product.title} />
+              <Card.Body>
+                <p className="product-name-on-card">{product.title}</p>
+                <p className="product-price-on-card">
+                  Price : <strike className="text-secondary">${product.price}</strike> ${product.special_price}
+                </p>
+              </Card.Body>
+            </Card>
+          </div>
+      );
+    }
+  });
+
+  const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    autoplay: true,
-    slidesToShow: 5,
-    slidesToScroll: 1
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
+
   return (
-    <Fragment>
-      <div className="sb-feature-title">
-        <hr />
-        <h2>New Arrival</h2>
-        <hr />
-        <p className="sb-feature-p">
-          Paragraph goes here.
-        </p>
-      </div>
-      <Container>
-        <Slider {...settings}>
-          <div>
-            <Card className="image-box card w-100">
-              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
-              <Card.Body>
-                <p className="product-name-on-card">Name of book</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
+      <Fragment>
+        <Container className="text-center" fluid={true}>
+          <div className="section-title text-center mb-55">
+            <h2> NEW ARRIVALS</h2>
+            <p>Check out our latest arrivals</p>
           </div>
-
-          <div>
-            <Card className="image-box card w-100">
-              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
-              <Card.Body>
-                <p className="product-name-on-card">Name of book</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div>
-            <Card className="image-box card w-100">
-              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
-              <Card.Body>
-                <p className="product-name-on-card">Name of book</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div>
-            <Card className="image-box card w-100">
-              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
-              <Card.Body>
-                <p className="product-name-on-card">Name of book</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div>
-            <Card className="image-box card w-100">
-              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
-              <Card.Body>
-                <p className="product-name-on-card">Name of book</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div>
-            <Card className="image-box card w-100">
-              <img className="center w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQWSXHobQ8oV3qqIibJDRBURzL4HmEbdl0w&usqp=CAU" />
-              <Card.Body>
-                <p className="product-name-on-card">Name of book</p>
-                <p className="product-price-on-card">Price : $120</p>
-
-              </Card.Body>
-            </Card>
-          </div>
-
-        </Slider>
-      </Container>
-    </Fragment>
-
+          <Row>
+            <Slider ref={sliderRef} {...settings}>
+              {productList}
+            </Slider>
+          </Row>
+        </Container>
+      </Fragment>
   );
-}
+};
 
 export default NewArrival;
