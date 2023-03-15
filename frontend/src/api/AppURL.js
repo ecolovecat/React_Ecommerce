@@ -5,6 +5,7 @@ const AppURL = {
     PostContact: BaseURL + "/postContact",
     AllSiteInfo: BaseURL + "/allSiteInfo",
     AllCategories: BaseURL + "/allCategories",
+    AllSlider: BaseURL + "/allslider",
     ProductListByRemark: function (Remark) {
         return BaseURL + "/productlistByRemark/" + Remark;
     },
