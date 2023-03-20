@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\SiteInfoController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\ProductDetailsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -45,3 +46,6 @@ Route::get('/productlistBySubCategory/{category}/{subcategory}', [ProductListCon
 
 // Slider Route
 Route::get('/allslider', [SliderController::class, 'allSlider']);
+
+// Product detail route
+Route::get('/productdetails/{id}', [ProductDetailsController::class, 'productDetails']);
