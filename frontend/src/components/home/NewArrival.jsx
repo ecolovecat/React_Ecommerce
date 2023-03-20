@@ -2,6 +2,7 @@ import {useState, useEffect, useRef, Fragment} from 'react';
 import Slider from 'react-slick';
 import {Container, Row, Card} from 'react-bootstrap';
 import AppURL from '../../api/AppURL';
+import { Link } from 'react-router-dom';
 import NewArrivalLoading from "../PlaceHolder/NewArrivalLoading";
 import axios from 'axios';
 
@@ -31,36 +32,26 @@ const NewArrival = () => {
         });
     }, []);
 
-    const productList = productData.map((product, i) => {
-        if (product.special_price === 'na') {
-            return (
-                <div key={i}>
-                    <Card className="image-box card">
-                        <img className="center" src={product.image} alt={product.title}/>
-                        <Card.Body>
-                            <p className="product-name-on-card">{product.title}</p>
+    const productList = productData.map((product, i) => (
+        <div key={i}>
+            <Link className="text-link" to={"/productdetails/" + product.id} >
+                <Card className="image-box card">
+                    <img className="center" src={product.image} alt={product.title}/>
+                    <Card.Body>
+                        <p className="product-name-on-card">{product.title}</p>
+                        {product.special_price === 'na' ? (
                             <p className="product-price-on-card">Price : ${product.price}</p>
-                        </Card.Body>
-                    </Card>
-                </div>
-            );
-        } else {
-            return (
-                <div key={i}>
-                    <Card className="image-box card">
-                        <img className="center" src={product.image} alt={product.title}/>
-                        <Card.Body>
-                            <p className="product-name-on-card">{product.title}</p>
+                        ) : (
                             <p className="product-price-on-card">
-                                Price : <strike
-                                className="text-secondary">${product.price}</strike> ${product.special_price}
+                                Price : <strike className="text-secondary">${product.price}</strike> ${product.special_price}
                             </p>
-                        </Card.Body>
-                    </Card>
-                </div>
-            );
-        }
-    });
+                        )}
+                    </Card.Body>
+                </Card>
+            </Link>
+        </div>
+    ));
+
 
     const settings = {
         dots: false,

@@ -14,6 +14,9 @@ const AppURL = {
     },
     ProductListBySubCategory: function (category, subcategory) {
         return BaseURL + "/productlistBySubCategory/" + category + "/" + subcategory;
+    },
+    ProductDetails: function (code) {
+        return BaseURL+"/productdetails/" + code;
     }
 };
 

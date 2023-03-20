@@ -22,7 +22,7 @@ const FeaturedProducts = () => {
 
   const MyView = productData.map((product, i) => (
       <Col className="p-1" key={i} xl={2} lg={2} md={2} sm={4} xs={6}>
-        <Link to="/productdetails">
+          <Link className="text-link" to={"/productdetails/" + product.id} >
           <Card className="image-box card">
             <img className="center" src={product.image} />
             <Card.Body>

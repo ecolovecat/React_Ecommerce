@@ -24,7 +24,7 @@ const AppRoute = (props) => {
                     <Route exact path="/refund" element={<RefundPage />} />
                     <Route exact path="/about" element={<AboutPage />} />
 
-                    <Route exact path="/productdetails" element={<ProductDetailsPage />} />
+                    <Route exact path="/productdetails/:code" element={<ProductDetailsPage />} />
 
                     <Route exact path="/notification" element={<NotificationPage />} />
 
