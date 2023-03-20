@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductDetailsController;
+use App\Http\Controllers\Admin\NotificationController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -49,3 +50,6 @@ Route::get('/allslider', [SliderController::class, 'allSlider']);
 
 // Product detail route
 Route::get('/productdetails/{id}', [ProductDetailsController::class, 'productDetails']);
+
+// Notification route
+Route::get('/notification', [NotificationController::class, 'notificationHistory']);
