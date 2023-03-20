@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AppURL from '../../api/AppURL';
+import FeaturedLoading from "../PlaceHolder/FeaturedLoading";
 import axios from 'axios';
 
 const FeaturedProducts = () => {
   const [productData, setProductData] = useState([]);
+  const [isLoading, setIsLoading] = useState("");
+  const [mainDiv, setMainDiv] = useState("d-none");
 
   useEffect(() => {
     axios.get(AppURL.ProductListByRemark('Feature'))
-        .then(response => setProductData(response.data))
+        .then(response => {
+            setProductData(response.data)
+            setIsLoading("d-none")
+            setMainDiv("")
+        })
         .catch(error => console.log(error));
   }, []);
 
@@ -34,13 +41,20 @@ const FeaturedProducts = () => {
   ));
 
   return (
-      <Container className="text-center" fluid={true}>
-        <div className="section-title text-center mb-55">
-          <h2>FEATURED PRODUCT</h2>
-          <p>Some Of Our Exclusive Collection, You May Like</p>
-        </div>
-        <Row>{MyView}</Row>
-      </Container>
+      <Fragment>
+          <FeaturedLoading isLoading={isLoading} />
+
+          <div className={mainDiv}>
+              <Container className="text-center" fluid={true}>
+                  <div className="section-title text-center mb-55">
+                      <h2>FEATURED PRODUCT</h2>
+                      <p>Some Of Our Exclusive Collection, You May Like</p>
+                  </div>
+                  <Row>{MyView}</Row>
+              </Container>
+          </div>
+      </Fragment>
+
   );
 };
 

@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider1 from '../../assets/images/slider1.jpg';
-import Slider2 from '../../assets/images/slider2.jpg';
-import Slider3 from '../../assets/images/slider3.jpg';
+import SliderLoading from "../PlaceHolder/SliderLoading";
 import AppURL from "../../api/AppURL";
 import axios from "axios";
 
 const HomeSlider = () => {
     const [sliderData, setSliderData] = useState([]);
+    const [isLoading, setIsLoading] = useState("");
+    const [mainDiv, setMainDiv] = useState("d-none");
     const [sliderSettings, setSliderSettings] = useState({
         dots: true,
         infinite: true,
@@ -51,6 +51,8 @@ const HomeSlider = () => {
     useEffect(() => {
         axios.get(AppURL.AllSlider).then(response => {
             setSliderData(response.data);
+            setIsLoading("d-none");
+            setMainDiv("");
         }).catch(error => {
             console.log(error)
         });
@@ -64,9 +66,13 @@ const HomeSlider = () => {
 
     return (
         <div>
-            <Slider {...sliderSettings}>
-                {MyView}
-            </Slider>
+            <SliderLoading isLoading={isLoading} />
+            <div className={mainDiv}>
+                <Slider {...sliderSettings}>
+                    {MyView}
+                </Slider>
+            </div>
+
         </div>
     );
 }
