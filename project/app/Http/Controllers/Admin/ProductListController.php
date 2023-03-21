@@ -31,4 +31,11 @@ class ProductListController extends Controller
         return $product_list;
 
     }
+
+    public function productBySearch(Request $request ) {
+        $key = $request->key;
+        $productList = ProductList::where('title', 'LIKE', "%{$key}%")->orWhere('brand', 'LIKE', "%{$key}%")->get();
+
+        return $productList;
+    }
 }
