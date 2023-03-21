@@ -17,7 +17,10 @@ const AppURL = {
         return BaseURL + "/productlistBySubCategory/" + category + "/" + subcategory;
     },
     ProductDetails: function (code) {
-        return BaseURL+"/productdetails/" + code;
+        return BaseURL + "/productdetails/" + code;
+    },
+    ProductBySearch: function (searchbar){
+        return BaseURL + "/search/" + searchbar;
     }
 };
 

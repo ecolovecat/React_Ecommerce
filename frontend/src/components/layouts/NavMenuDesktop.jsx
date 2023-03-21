@@ -1,10 +1,30 @@
-import React, { Fragment } from 'react'
+import React, {Fragment, useState} from 'react'
 
 import { Navbar, Container, Row, Col, Button } from 'react-bootstrap';
 import Logo from '../../assets/images/duy.jpg';
-import { Link } from "react-router-dom";
+import { Link, Navigate  } from "react-router-dom";
 
 const NavMenuDesktop = (props) => {
+  const [searchKey, setSearchKey] = useState("")
+  const [searchRedirectStauts, setSearchRedirectStauts] = useState(false)
+
+  const SearchOnChange = (event) => {
+    let Searchkey = event.target.value;
+    // alert(Searchkey);
+    setSearchKey(Searchkey)
+  }
+
+  const SearchOnClick = () => {
+    if(searchKey.length>=2){
+      setSearchRedirectStauts(true)
+    }
+  }
+
+  const searchRedirect = () => {
+    if(searchRedirectStauts === true){
+      return <Navigate  to={"/productbysearch/" + searchKey} />
+    }
+  }
   return (
     <Fragment>
       <div className="TopSectionDown">
@@ -18,8 +38,9 @@ const NavMenuDesktop = (props) => {
 
               <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
                 <div className="input-group w-100">
-                  <input type="text" className="form-control" />
-                  <Button type="button" className="btn site-btn sb-btn-search"><i className="fa fa-search"> </i>
+                  <input onChange={SearchOnChange} type="text" className="form-control" />
+
+                  <Button onClick={SearchOnClick} type="button" className="btn site-btn"><i className="fa fa-search"> </i>
                   </Button>
                 </div>
               </Col>
@@ -36,7 +57,7 @@ const NavMenuDesktop = (props) => {
               </Col>
 
             </Row>
-
+            {searchRedirect()}
           </Container>
 
         </Navbar>

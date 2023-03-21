@@ -10,6 +10,7 @@ import NotificationPage from '../pages/NotificationPage';
 import FavouritePage from '../pages/FavouritePage';
 import CartPage from '../pages/CartPage';
 import AboutPage from '../pages/AboutPage';
+import SearchPage from '../pages/SearchPage';
 import ProductCategoryPage from '../pages/ProductCategoryPage';
 
 const AppRoute = (props) => {
@@ -32,6 +33,8 @@ const AppRoute = (props) => {
 
                     <Route exact path="/cart" element={<CartPage />} />
                     <Route exact path="/productcategory/:category" element={<ProductCategoryPage />} />
+
+                    <Route exact path="/productbysearch/:searchkey" element={<SearchPage />} />
                </Routes>
           </Fragment>
      )
