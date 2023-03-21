@@ -6,6 +6,7 @@ const AppURL = {
     AllSiteInfo: BaseURL + "/allSiteInfo",
     AllCategories: BaseURL + "/allCategories",
     AllSlider: BaseURL + "/allslider",
+    NotificationHistory: BaseURL + "/notification",
     ProductListByRemark: function (Remark) {
         return BaseURL + "/productlistByRemark/" + Remark;
     },

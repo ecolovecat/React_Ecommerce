@@ -2,6 +2,7 @@ import React from 'react';
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 
 const Category = (props) => {
 
@@ -34,6 +35,12 @@ const Category = (props) => {
     return (
         <Fragment>
             <Container className="text-center" fluid={true}>
+                <div className="breadbody">
+                    <Breadcrumb>
+                        <Breadcrumb.Item> <Link to="/"> Home </Link> </Breadcrumb.Item>
+                        <Breadcrumb.Item> <Link to={"/productcategory/"+Category}> {Category } </Link> </Breadcrumb.Item>
+                    </Breadcrumb>
+                </div>
                 <div className="section-title text-center mb-55"><h2> {Category} </h2></div>
                 <Row>
                     {MyView}
