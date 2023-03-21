@@ -11,7 +11,9 @@ import FavouritePage from '../pages/FavouritePage';
 import CartPage from '../pages/CartPage';
 import AboutPage from '../pages/AboutPage';
 import SearchPage from '../pages/SearchPage';
+import RegisterPage from '../pages/RegisterPage';
 import ProductCategoryPage from '../pages/ProductCategoryPage';
+import UserLogin from "../components/common/UserLogin";
 
 const AppRoute = (props) => {
      return (
@@ -35,6 +37,9 @@ const AppRoute = (props) => {
                     <Route exact path="/productcategory/:category" element={<ProductCategoryPage />} />
 
                     <Route exact path="/productbysearch/:searchkey" element={<SearchPage />} />
+
+                    <Route exact path="/register" element={<RegisterPage />} />
+                    <Route exact path="/login" element={<UserLogin />} />
                </Routes>
           </Fragment>
      )
